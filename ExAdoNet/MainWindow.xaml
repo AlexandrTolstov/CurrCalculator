@@ -6,7 +6,31 @@
         xmlns:local="clr-namespace:ExAdoNet"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="30"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBox Grid.Row="1" Grid.Column="1" Margin="5" KeyUp="TbxSum1_KeyUP" x:Name="tbxSum1" Text="1"></TextBox>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="5" KeyUp="TbxSum2_KeyUP" x:Name="tbxSum2" Text="1"></TextBox>
+
+        <ComboBox Grid.Row="1" Grid.Column="3" SelectionChanged="CbxCur1_SelectionChanged" DisplayMemberPath="title" x:Name="cbxCur1"/>
+        <ComboBox Grid.Row="2" Grid.Column="3" SelectionChanged="CbxCur2_SelectionChanged" DisplayMemberPath="title" x:Name="cbxCur2"/>
+
+        <Label Grid.Row="4" Grid.Column="1" x:Name="lblTotalSum"/>
+        <Label Grid.Row="4" Grid.Column="3" x:Name="lblTotalCurr"/>
+
+        <Label Grid.Row="5" Grid.ColumnSpan="3" x:Name="lblMessage"/>
     </Grid>
 </Window>
